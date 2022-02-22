@@ -1,0 +1,295 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	height: 100%;
+	width: 100%;
+	font-family: 'Raleway', sans-serif;
+	font-family: 'Rubik', sans-serif;
+	font-size: 12px;
+	line-height: 130%;
+	margin: 0;
+	padding: 0;
+	background-color: #ffffff;
+	color: #616161;
+}
+
+ul,
+li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+$red: #EC5863;
+
+
+[class*="_container"] {
+	width: 1087px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.wrapper {
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+
+
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10;
+
+	&_container {
+		display: flex;
+		min-height: 114px;
+		align-items: center;
+	}
+
+	&_logo {
+		position: relative;
+		z-index: 10;
+	}
+
+	&_menu {
+		flex: 1 1 auto;
+	}
+
+	.menu {
+		display: flex;
+		justify-content: flex-end;
+		//padding: 0 40px 0 0;
+
+		&_list {
+			display: flex;
+			//justify-content: space-between;
+		}
+
+		&_item {
+			font-family: 'Raleway', sans-serif;
+			margin: 0 40px 0 0;
+			text-transform: uppercase;
+			font-weight: 700;
+			font-size: 10px;
+			line-height: 1.2;
+
+			letter-spacing: 0.14em;
+		}
+
+		&_link {
+			color: #000000;
+			transition: .2s ease-in;
+			padding-bottom: 2px;
+			
+
+			&:hover{
+				border-bottom: 2px solid #000000;
+			}
+		}
+	}
+
+	&_btn {
+		flex: 0 0 252px;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+
+	.btn {
+		display: inline-block;
+		font-family: 'Raleway', sans-serif;
+		text-transform: uppercase;
+		border-radius: 5px;
+		font-weight: 800;
+		font-size: 10px;
+		line-height: 1.2;
+		letter-spacing: 0.14em;
+		color: #FCFDFE;
+		padding: 14px 30px;
+		background: $red;
+		transition: 0.3s ease;
+
+		&:hover {
+			background-color: #eb737b;
+		}
+
+
+		&_blue {
+			background: #4285F4;
+
+			&:hover {
+				background-color: #659bf3;
+			}
+		}
+	}
+
+
+	.menu-icon-wrapper {
+		display: none;
+
+	}
+
+
+
+}
+
+@media (max-width: 1087px) {
+
+	[class*="_container"] {
+		max-width: 970px;
+	}
+
+
+
+}
+
+@media (max-width: 991.98px) {
+
+	[class*="_container"] {
+		max-width: 750px;
+	}
+
+	.header{
+	.header_container {
+		min-height: 80px;
+	}
+
+//	.header_logo{
+//		margin-right: 20px;
+//	}
+
+	.menu_item {
+		margin: 0 30px 0 0;
+	}
+
+	.header_btn {
+		flex: 0 0 170px;
+	}
+	}
+
+}
+
+@media (max-width: 767.98px) {
+
+	[class*="_container"] {
+		max-width: 100%;
+	}
+
+	.header {
+		.menu-icon-wrapper {
+			display: flex;
+			margin: 0 0 0 20px;
+			height: 30px;
+			width: 30px;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.menu-icon {
+			position: relative;
+			width: 30px;
+			height: 4px;
+			background-color: #000000;
+		}
+
+		.menu-icon::before {
+			position: absolute;
+			left: 0;
+			top: -10px;
+			content: '';
+			display: block;
+			width: 30px;
+			height: 4px;
+			background-color: #000000;
+			transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+		}
+
+		.menu-icon::after {
+			position: absolute;
+			left: 0;
+			top: 10px;
+			content: '';
+			display: block;
+			width: 30px;
+			height: 4px;
+			background-color: #000000;
+			transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+		}
+
+		.menu-icon.menu-icon-active {
+			background-color: transparent;
+		}
+
+		.menu-icon.menu-icon-active::before {
+			transform: rotate(45deg);
+			top: 0;
+			transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+		}
+
+		.menu-icon.menu-icon-active::after {
+			transform: rotate(-45deg);
+			top: 0;
+			transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+		}
+
+		.menu_body {
+			position: fixed;
+			top: -100%;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: #a3b5e7;	
+			padding: 100px 15px 30px;
+			transition: .4s ease;
+
+		}
+
+		.open{
+			top: 0;
+		}
+
+		&_btn {
+			flex: 0 0 132px;
+			position: relative;
+			z-index: 10;
+
+			.btn {
+				padding: 12px 20px;
+				font-size: 9px;
+			}
+		}
+
+		.menu_list {
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.menu_item {
+			margin-bottom: 25px;
+		}
+
+		.menu_link {
+			color: #ffffff;
+			font-size: 20px;
+		}
+	}
+}
+
+
+
+.main {
+	flex: 1 1 auto;
+}
